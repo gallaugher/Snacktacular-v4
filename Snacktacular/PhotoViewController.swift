@@ -52,14 +52,6 @@ class PhotoViewController: UIViewController {
         postedByLabel.text = "by: \(photo.photoUserEmail)"
         dateLabel.text = "on: \(dateFormatter.string(from: photo.date))"
         descriptionTextView.text = photo.description
-        guard let url = URL(string: "https://gallaugher.com/wp-content/uploads/2020/07/groot.png") else {
-            print("URL Didn't work")
-            photoImageView.image = photo.image
-            return
-        }
-        photoImageView.sd_imageTransition = .fade
-        photoImageView.sd_imageTransition?.duration = 0.5
-        photoImageView.sd_setImage(with: url)
         if photo.documentID == "" { // This is a new photo
             addBordersToEditableObjects()
         } else {
@@ -76,6 +68,14 @@ class PhotoViewController: UIViewController {
                 descriptionTextView.backgroundColor = .white
             }
         }
+        guard let url = URL(string: photo.photoURL) else {
+            // Then this must be a new image, so get the image from teh photo.image passed in rather than from the url
+            photoImageView.image = photo.image
+            return
+        }
+        photoImageView.sd_imageTransition = .fade
+        photoImageView.sd_imageTransition?.duration = 0.5
+        photoImageView.sd_setImage(with: url)
     }
     
     func updateFromUserInterface() {
