@@ -31,7 +31,7 @@
 		3EF55C4224D11A0200D0DBCA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF55C3124D11A0000D0DBCA /* PhotoViewController.swift */; };
 		3EF55C4324D11A0200D0DBCA /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF55C3224D11A0100D0DBCA /* Spot.swift */; };
 		3EF55C4424D11A0200D0DBCA /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF55C3324D11A0200D0DBCA /* Reviews.swift */; };
-		E6521BAB6B6F18A2D74979FE /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9B8E94F429F855A1F180EE /* Pods_Snacktacular.framework */; };
+		CD767766D6A2D84E11EE5E45 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850DA4CD31862318EF91A5B5 /* Pods_Snacktacular.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +62,8 @@
 		3EF55C3224D11A0100D0DBCA /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		3EF55C3324D11A0200D0DBCA /* Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		4907166AEC0BCB2E6D543F4A /* Pods-Snacktacular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.debug.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.debug.xcconfig"; sourceTree = "<group>"; };
-		4E9B8E94F429F855A1F180EE /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9AD3E80A4DCE62435ECF70 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
+		850DA4CD31862318EF91A5B5 /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6521BAB6B6F18A2D74979FE /* Pods_Snacktacular.framework in Frameworks */,
+				CD767766D6A2D84E11EE5E45 /* Pods_Snacktacular.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 		34746297A21C4B59084BA1B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4E9B8E94F429F855A1F180EE /* Pods_Snacktacular.framework */,
+				850DA4CD31862318EF91A5B5 /* Pods_Snacktacular.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,8 +156,8 @@
 				3E662EB524D1175D00817543 /* Sources */,
 				3E662EB624D1175D00817543 /* Frameworks */,
 				3E662EB724D1175D00817543 /* Resources */,
-				B1D720F66CEC0FF5AA1DE517 /* [CP] Embed Pods Frameworks */,
 				36FF2F31235E7E40687928E3 /* [CP] Copy Pods Resources */,
+				100067D5110DF9D45321384E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +216,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		100067D5110DF9D45321384E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Snacktacular/Pods-Snacktacular-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Snacktacular/Pods-Snacktacular-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Snacktacular/Pods-Snacktacular-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		36FF2F31235E7E40687928E3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,23 +270,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1D720F66CEC0FF5AA1DE517 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Snacktacular/Pods-Snacktacular-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Snacktacular/Pods-Snacktacular-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Snacktacular/Pods-Snacktacular-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
